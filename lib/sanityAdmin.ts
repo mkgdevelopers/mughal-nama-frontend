@@ -1,9 +1,10 @@
+// lib/sanityAdmin.ts
 import { createClient } from '@sanity/client';
 
 export const adminClient = createClient({
-  projectId: 'iu2q98xc', // replace this
-  dataset: 'production',
-  apiVersion: '2023-01-01',
-  token: 'skvXAdErS7HM8uYkA2dWhlfbFaiUw2aEThIfEaeYhvVOaZq62ZaqWA8KIADEKTLmwa6biXOSduRidPBTWwSWSpJhaJhVA0sWj5OgdSkllGG7RZVPwSIWVAPOnErH3e3vnWDAzzI1J2eVNGY043NWfkLewZ3N1VVmg37EKFiqZwU8eoTcY9JS',   // 🔐 use secret token
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  apiVersion: process.env.SANITY_API_VERSION!,
+  token: process.env.SANITY_ADMIN_TOKEN!,
   useCdn: false,
 });
